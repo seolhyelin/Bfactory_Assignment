@@ -1,13 +1,18 @@
 @use '/src/styles/constants/colors';
 
-.boundary {
-  width: fit-content;
-  height: fit-content;
-  margin: 0 auto;
-  border: 4px solid colors.$BLACK;
-}
+main {
+  height: 100vh;
+  background-color: colors.$GRAYA;
 
-p {
-  margin: 30px;
-  font-size: 25px;
+  .boundary {
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    border: 4px solid colors.$BLACK;
+  }
+
+  p {
+    margin: 30px;
+    font-size: 25px;
+  }
 }

@@ -23,7 +23,7 @@
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-filename-extension": [
       "error",
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      { "extensions": [".js", ".jsx"] }
     ],
     "react/jsx-indent": "warn",
     "react/jsx-props-no-spreading": "off",

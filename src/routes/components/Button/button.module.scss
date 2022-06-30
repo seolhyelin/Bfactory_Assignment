@@ -6,3 +6,27 @@ button {
   font-size: 23px;
   border: 3px solid colors.$BLACK;
 }
+
+.orange {
+  background-color: orange;
+
+  &:hover {
+    background-color: rgb(204, 134, 5);
+  }
+}
+
+.green {
+  background-color: greenyellow;
+}
+
+.blue {
+  background-color: skyblue;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.yellow {
+  background-color: yellow;
+}
