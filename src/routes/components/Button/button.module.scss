@@ -1,1 +1,8 @@
 @use '/src/styles/constants/colors';
+
+button {
+  padding: 8px 18px;
+  margin: 30px 15px;
+  font-size: 23px;
+  border: 3px solid colors.$BLACK;
+}
