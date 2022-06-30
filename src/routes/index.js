@@ -43,7 +43,23 @@ const App = () => {
       <div className={styles.boundary}>
         <Stage width={1000} height={800} onMouseDown={checkDeselect} onTouchStart={checkDeselect}>
           <Layer>
-            <Image image={image} ref={imageRef} x={xPos} y={yPos} draggable onDragMove={move} onMouseDown={onSelect} />
+            <Image
+              image={image}
+              ref={imageRef}
+              x={xPos}
+              y={yPos}
+              draggable
+              onDragMove={move}
+              onMouseDown={onSelect}
+              onTransformEnd={(e) => {
+                const node = imageRef.current
+                const scaleX = node.scaleX()
+                const scaleY = node.scaleY()
+
+                node.scaleX(1)
+                node.scaleY(1)
+              }}
+            />
             {isSelected && (
               <Transformer
                 ref={trRef}
