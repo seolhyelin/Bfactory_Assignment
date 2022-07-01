@@ -83,7 +83,7 @@ const App = () => {
 
   return (
     <main>
-      <button type='button' className={styles.orange} name='isMovable'>
+      <button type='button' className={styles.orange} name='isMovable' onClick={onToggleEditMode}>
         이동
       </button>
       <button type='button' className={styles.green} name='isRotatable'>
