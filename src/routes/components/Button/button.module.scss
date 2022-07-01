@@ -8,25 +8,41 @@ button {
 }
 
 .orange {
-  background-color: orange;
+  background-color: colors.$ORANGE;
 
   &:hover {
-    background-color: rgb(204, 134, 5);
+    background-color: #ffbc5e;
   }
 }
 
 .green {
-  background-color: greenyellow;
+  background-color: colors.$GREEN;
+
+  &:hover {
+    background-color: #d7f5db;
+  }
 }
 
 .blue {
-  background-color: skyblue;
+  background-color: colors.$TEAL;
+
+  &:hover {
+    background-color: #a2dffa;
+  }
 }
 
 .purple {
-  background-color: purple;
+  background-color: colors.$PURPLE;
+
+  &:hover {
+    background-color: #a987ad;
+  }
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: colors.$YELLOW;
+
+  &:hover {
+    background-color: #fae07a;
+  }
 }

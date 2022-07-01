@@ -1,8 +1,56 @@
 @use '/src/styles/constants/colors';
+@use '/src/styles/mixins/responsive';
 
 main {
   height: 100vh;
   background-color: colors.$GRAYA;
+
+  button {
+    padding: 8px 18px;
+    margin: 30px 15px;
+    font-size: 23px;
+    border: 3px solid colors.$BLACK;
+  }
+
+  .orange {
+    background-color: colors.$ORANGE;
+
+    &:hover {
+      background-color: #ffbc5e;
+    }
+  }
+
+  .green {
+    background-color: colors.$GREEN;
+
+    &:hover {
+      background-color: #d7f5db;
+    }
+  }
+
+  .blue {
+    background-color: colors.$TEAL;
+
+    &:hover {
+      background-color: #a2dffa;
+    }
+  }
+
+  .purple {
+    background-color: colors.$PURPLE;
+
+    &:hover {
+      background-color: #a987ad;
+    }
+  }
+
+  .yellow {
+    background-color: colors.$YELLOW;
+
+    &:hover {
+      background-color: #fae07a;
+    }
+  }
 
   .boundary {
     width: fit-content;

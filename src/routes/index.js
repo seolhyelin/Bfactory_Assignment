@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState, useLayoutEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Stage, Layer, Image, Transformer } from 'react-konva'
-
 import useImage from 'use-image'
 import 'react-image-crop/src/ReactCrop.scss'
-import Button from './components/Button'
+import store from 'storejs'
+import { imageState, setLocalStorage } from './recoil/image'
+
 import styles from './routes.module.scss'
 
 const initialEditConfig = {
@@ -27,6 +28,7 @@ const App = () => {
   const [isSelected, setIsSelected] = useState(false)
   const [editConfig, setEditConfig] = useState(initialEditConfig)
   const trRef = useRef(null)
+  const [showPoint, setShowPoint] = useState(false)
 
   useEffect(() => {
     if (isSelected) {
@@ -75,21 +77,27 @@ const App = () => {
     setEditConfig(updatedEditConfig)
   }
 
+  const handleSubmit = () => {
+    setShowPoint(!showPoint)
+  }
+
   return (
     <main>
-      <Button name='isMovable' color='orange' onToggleEditMode={onToggleEditMode}>
+      <button type='button' className={styles.orange} name='isMovable'>
         이동
-      </Button>
-      <Button name='isRotatable' color='green' onToggleEditMode={onToggleEditMode}>
+      </button>
+      <button type='button' className={styles.green} name='isRotatable'>
         회전
-      </Button>
-      <Button name='isResizable' color='blue' onToggleEditMode={onToggleEditMode}>
+      </button>
+      <button type='button' className={styles.blue} name='isResizable'>
         사이즈 변경
-      </Button>
-      <Button name='isCropable' color='purple' onToggleEditMode={onToggleEditMode}>
+      </button>
+      <button type='button' className={styles.purple} name='isCropable'>
         crop
-      </Button>
-      <Button color='yellow'>제출</Button>
+      </button>
+      <button type='button' className={styles.yellow} color='yellow' onClick={handleSubmit}>
+        제출
+      </button>
       <div className={styles.boundary} style={{ backgroundColor: 'white' }}>
         <Stage width={1000} height={800} onMouseDown={checkDeselect} onTouchStart={checkDeselect} ref={stageRef}>
           <Layer>
@@ -133,9 +141,11 @@ const App = () => {
           </Layer>
         </Stage>
       </div>
-      <p>
-        x : {xPos.toFixed(2)} y : {yPos.toFixed(2)}
-      </p>
+      {showPoint && (
+        <p>
+          x : {xPos.toFixed(2)} y : {yPos.toFixed(2)}
+        </p>
+      )}
     </main>
   )
 }
