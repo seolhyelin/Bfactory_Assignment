@@ -6,13 +6,6 @@ import 'react-image-crop/src/ReactCrop.scss'
 
 import styles from './Routes.module.scss'
 
-const initialEditConfig = {
-  isMovable: false,
-  isResizable: false,
-  isRotatable: false,
-  isCropable: false,
-}
-
 const App = () => {
   const imageRef = useRef(null)
   const stageRef = useRef(null)
