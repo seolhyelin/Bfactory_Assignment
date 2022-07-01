@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Stage, Layer, Image, Transformer } from 'react-konva'
 import useImage from 'use-image'
 import 'react-image-crop/src/ReactCrop.scss'
-import store from 'storejs'
 import { imageState, setLocalStorage } from './recoil/image'
 
 import styles from './routes.module.scss'
@@ -79,6 +78,7 @@ const App = () => {
 
   const handleSubmit = () => {
     setShowPoint(!showPoint)
+    setLocalStorage(imageState, 'a')
   }
 
   return (
