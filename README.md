@@ -1,4 +1,5 @@
 # Bfactory ImageTool 📸
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/90893364/176824570-e842e85f-e81a-4fa3-9447-6039a2a685ca.gif)
 
 
 ## 🔗 배포 주소
