@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react'
 import { Stage, Layer, Image, Transformer } from 'react-konva'
 import useImage from 'use-image'
 import 'react-image-crop/src/ReactCrop.scss'
-import { imageState, setLocalStorage } from './recoil/image'
 
 import styles from './Routes.module.scss'
 
@@ -25,7 +24,6 @@ const App = () => {
   const [width, setWidth] = useState(500)
   const [height, setHeight] = useState(400)
   const [isSelected, setIsSelected] = useState(false)
-  const [editConfig, setEditConfig] = useState(initialEditConfig)
   const trRef = useRef(null)
   const [showPoint, setShowPoint] = useState(false)
 
@@ -53,37 +51,18 @@ const App = () => {
   }
 
   const onChange = (newAttrs) => {
-    if (editConfig.isResizable) {
-      const { width, height } = newAttrs
-      setWidth(width)
-      setHeight(height)
-    }
-  }
-
-  const onToggleEditMode = (e) => {
-    const currentSelectedName = e.currentTarget.dataset.name
-    const initializeEditConfig = {
-      isMovable: false,
-      isResizable: false,
-      isRotatable: false,
-      isCropable: false,
-    }
-    const updatedEditConfig = {
-      ...initializeEditConfig,
-      [currentSelectedName]: true,
-    }
-
-    setEditConfig(updatedEditConfig)
+    const { width, height } = newAttrs
+    setWidth(width)
+    setHeight(height)
   }
 
   const handleSubmit = () => {
     setShowPoint(!showPoint)
-    setLocalStorage(imageState, 'a')
   }
 
   return (
     <main>
-      <button type='button' className={styles.orange} name='isMovable' onClick={onToggleEditMode}>
+      <button type='button' className={styles.orange} name='isMovable'>
         이동
       </button>
       <button type='button' className={styles.green} name='isRotatable'>
