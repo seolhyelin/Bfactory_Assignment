@@ -5,7 +5,7 @@ import useImage from 'use-image'
 import 'react-image-crop/src/ReactCrop.scss'
 import { imageState, setLocalStorage } from './recoil/image'
 
-import styles from './routes.module.scss'
+import styles from './Routes.module.scss'
 
 const initialEditConfig = {
   isMovable: false,
